@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: var(--ff-body);
+  font-family: "Josefin Sans", sans-serif;
   transition: 0.3s;
 }
 
