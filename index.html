@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#fff" />
+    <title>Frontend Mentor | Todo app</title>
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        transition: 0.3s;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body class="bg-dark">
+    <header class="header-dark"></header>
+    <div class="app-wrapper">
+      <header class="app-header">
+        <h1>TODO</h1>
+        <div class="theme-toggle">
+          <img src="./images/icon-sun.svg" />
+        </div>
+      </header>
+      <div class="input-wrapper" draggable="true">
+        <div class="app-dark input-check">
+          <div class="checkFake border-dark"></div>
+        </div>
+        <input
+          class="app-dark"
+          id="input"
+          type="text"
+          required
+          placeholder="Create a new todo.."
+        />
+      </div>
+      <main class="app-dark body">
+        <ul class="list" dropzone="true">
+          <!-- Data from Local Storage -->
+          <li class="empty" style="font-size: clamp(0.8rem, 2vw, 1rem);">
+            wow empty (∪.∪ )...zzZZ
+          </li>
+        </ul>
+        <div class="footer-app">
+          <span><span id="counter">0</span> items left</span>
+          <nav class="nav app-dark">
+            <span class="all act">All</span>
+            <span class="uncompleted">Active</span>
+            <span class="completed">Completed</span>
+          </nav>
+          <span id="clear">Clear Completed</span>
+        </div>
+      </main>
+    </div>
+    <footer class="footer">
+      <p>Drag and drop to reorder list.</p>
+      <p>Or click <kbd>Enter</kbd> / the Circle for mobile</p>
+    </footer>
+    <div class="app-dark attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a target="_blank" href="kraken-afk.github.io">me</a>.
+    </div>
+    <script src="./script/mobile_script.js" charset="utf-8"></script>
+    <script src="./script/style.js" charset="utf-8"></script>
+    <script src="./script/app.js" charset="utf-8"></script>
+  </body>
+</html>

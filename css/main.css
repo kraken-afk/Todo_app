@@ -1,0 +1,359 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* base */
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  font-size: 16px;
+  --ff-body: "Josefin Sans", sans-serif;
+
+  /*===================== Dark Thene =====================*/
+  --clrd-700: hsl(235, 21%, 11%);
+  --clrd-600: hsl(235, 24%, 19%);
+
+  --fcd-400: hsl(234, 39%, 85%);
+  --fcd-300: hsl(236, 33%, 92%);
+  --fcd-check: hsl(234, 11%, 52%);
+  /*===================== Dark Thene =====================*/
+
+  /*===================== Light Thene =====================*/
+  --clrl-100: hsl(0, 0%, 98%);
+  --clr-200: hsl(236, 33%, 92%);
+  /*===================== Light Thene =====================*/
+}
+
+body {
+  font-family: var(--ff-body);
+  transition: 0.3s;
+}
+
+svg,
+path {
+  pointer-events: none;
+}
+
+.bg-dark {
+  background-color: var(--clrd-700);
+}
+
+.bg-light {
+  background-color: var(--clrl-200);
+}
+
+.app-dark {
+  background-color: var(--clrd-600);
+  color: var(--fcd-300);
+}
+
+.app-light {
+  background-color: var(--clrl-100);
+  color: hsl(235, 19%, 35%);
+}
+
+/* style */
+
+.header-dark {
+  width: 100%;
+  height: 50vh;
+  background-image: url("../images/bg-desktop-dark.jpg");
+  background-size: cover;
+}
+
+.header-light {
+  width: 100%;
+  height: 50vh;
+  background-image: url("../images/bg-desktop-light.jpg");
+  background-size: cover;
+}
+
+.app-wrapper {
+  margin: 0 auto;
+  max-width: min(90vw, 36rem);
+  transform: translateY(-15rem);
+  /* outline: 3px red solid; */
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.7rem;
+  color: #fff;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+.input-wrapper {
+  width: 100%;
+  height: 3.5rem;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.input-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(to bottom right, transparent, transparent);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.border-dark {
+  border: 1px solid hsl(233, 14%, 35%);
+}
+
+.border-light {
+  border: 1px solid hsl(233, 11%, 84%);
+}
+
+.check.checked {
+  background: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  border: none;
+}
+
+.check.checked svg {
+  opacity: 1;
+}
+
+.check svg {
+  opacity: 0;
+}
+
+#input {
+  padding: 1rem;
+  border: none;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+#input:focus {
+  outline: 0px solid transparent;
+}
+
+.body {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  padding: 1rem 0;
+  padding-top: 0;
+  box-shadow: 0 30px 40px -10px hsla(0, 0%, 0%, 0.5);
+}
+
+.list {
+  width: 100%;
+  height: 80%;
+  min-height: 5rem;
+  max-height: 18rem;
+  overflow-y: auto;
+  list-style-type: none;
+  position: relative;
+}
+
+.empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.list-item {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: 3rem 1fr 1rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(0.5rem, 1vw, 1rem);
+  letter-spacing: 1px;
+  font-size: 1rem;
+  cursor: default;
+}
+
+.bb-dark {
+  border-bottom: 1px solid hsl(237, 14%, 26%);
+}
+
+.bb-light {
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+
+.bb-dark.line {
+  color: hsl(233, 14%, 35%);
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+.bb-light.line {
+  color: hsl(233, 11%, 84%);
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+.cross {
+  cursor: pointer;
+  z-index: 2;
+}
+
+.app-dark .cross path {
+  fill: hsl(233, 14%, 35%);
+  transition: 0.1s;
+}
+
+.app-dark .cross:hover path {
+  fill: var(--fcd-300);
+}
+
+.app-light .cross:hover path {
+  fill: hsl(233, 14%, 75%);
+}
+
+.list-item > .input-check {
+  margin-right: 18px;
+}
+
+.footer-app {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-app > span {
+  padding: 1.4rem 0 0.5rem 0;
+  font-size: 0.8rem;
+  margin: 0 1.5rem;
+  color: hsl(233, 14%, 35%);
+  transition: 0.3s;
+}
+
+.footer-app > span:hover {
+  color: hsl(220, 98%, 61%);
+  cursor: default;
+}
+
+#clear {
+  cursor: pointer;
+}
+
+.nav {
+  font-size: 0.8rem;
+  color: hsl(233, 14%, 35%);
+  transform: translate(7px, 6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.nav > span {
+  margin: 0 min(2vw, 0.7rem);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.act {
+  color: hsl(220, 98%, 61%);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -5rem;
+}
+
+.footer p {
+  color: hsl(233, 14%, 35%);
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.checkFake {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  cursor: grab;
+}
+
+/* Media Breakpoints */
+
+@media screen and (max-width: 500px) {
+  .header-dark {
+    background-image: url("../images/bg-mobile-dark.jpg");
+    height: 35vh;
+  }
+
+  .footer {
+    position: static;
+  }
+
+  .header-light {
+    height: 35vh;
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+
+  .app-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .app-wrapper {
+    transform: translateY(-27vh);
+  }
+
+  #input {
+    font-size: 0.7rem;
+  }
+
+  .body {
+    box-shadow: 0 80px 40px -10px hsla(0, 0%, 0%, 0.5);
+  }
+
+  .nav {
+    width: 100%;
+    height: 3rem;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.dragging {
+  opacity: 0.5;
+}
